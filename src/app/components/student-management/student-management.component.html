@@ -1,0 +1,39 @@
+<div>
+    <h3>Add/Update Student</h3>
+    <input [(ngModel)]="studentName" placeholder="Student Name">
+    <input [(ngModel)]="email" placeholder="Email Address ">
+    <button (click)="addStudent()">Add</button>
+
+    <hr/>
+
+    <input [(ngModel)]="studentIdToUpdate" placeholder="Student ID to Update">
+   
+    
+
+
+    <hr/>
+
+    <h3>All Students</h3>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Student ID</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let student of students">
+                <td>{{student.name}}</td>
+                <td>{{student.email}}</td>
+                <td>{{student._id}}</td>
+                <td> 
+                    <button class = "button" (click) ="deleteStudent(student._id)">Delete</button>
+                    <button class = "button" (click)="updateStudent()">Update</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
